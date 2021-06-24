@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBoxesTable extends Migration
+class CreateCardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateBoxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('boxes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('cards', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('title');
             $table->string('description');
-            $table->integer('forward_id')->unique();
+            $table->integer('forward_id');
+            $table->boolean('is_archived');
+            $table->date('deadline');
             $table->timestamps();
+            $table->unique('forward_id');
+            $table->foreignId('box_id')->constrained();
         });
     }
 
@@ -29,6 +33,6 @@ class CreateBoxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boxes');
+        Schema::dropIfExists('cards');
     }
 }
