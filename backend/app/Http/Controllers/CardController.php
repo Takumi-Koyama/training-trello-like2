@@ -7,79 +7,38 @@ use Illuminate\Http\Request;
 
 class CardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function get(int $id)
     {
-        //
+        return "get";
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return "create";
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function updateContents(int $id)
     {
-        //
+        return "updateContents";
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Card  $card
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Card $card)
+    public function updateDeadline(int $id)
     {
-        //
+        return "updateDeadline";
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Card  $card
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Card $card)
+    public function move(int $id)
     {
-        //
+        return "move";
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Card  $card
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Card $card)
+    public function archive(int $id)
     {
-        //
+        return "archive";
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Card  $card
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Card $card)
+    public function delete(int $id)
     {
-        //
+        return "delete";
     }
 }

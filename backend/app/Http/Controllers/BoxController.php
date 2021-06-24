@@ -3,17 +3,38 @@
 namespace App\Http\Controllers;
 
 use App\Models\Box;
+use Faker\Core\Number;
 use Illuminate\Http\Request;
 
 class BoxController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function get()
+    public function getAll()
     {
-        return "a";
+        return "getall";
+    }
+
+    public function get(int $id)
+    {
+        return "get";
+    }
+
+    public function create()
+    {
+        return "create";
+    }
+
+    public function updateTitle(int $id)
+    {
+        return "updateTitle";
+    }
+
+    public function move(int $id)
+    {
+        return "move";
+    }
+
+    public function delete(int $id)
+    {
+        return "delete";
     }
 }
