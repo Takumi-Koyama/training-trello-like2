@@ -22,7 +22,22 @@ class CardFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->title(),
+            'description' => $this->faker->text(),
         ];
+    }
+
+    public function archived()
+    {
+        return $this->state([
+            'is_archived' => true,
+        ]);
+    }
+
+    public function unarchived()
+    {
+        return $this->state([
+            'is_archived' => false,
+        ]);
     }
 }
