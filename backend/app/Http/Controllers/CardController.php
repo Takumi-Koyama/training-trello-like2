@@ -9,36 +9,36 @@ class CardController extends Controller
 {
     public function get(int $id)
     {
-        return "get";
+        return $id;
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return "create";
+        return $request;
     }
 
-    public function updateContents(int $id)
+    public function updateContents(Request $request, int $id)
     {
-        return "updateContents";
+        return $request;
     }
 
-    public function updateDeadline(int $id)
+    public function updateDeadline(Request $request, int $id)
     {
-        return "updateDeadline";
+        return $request;
     }
 
-    public function move(int $id)
+    public function move(Request $request, int $id)
     {
-        return "move";
+        return $request;
     }
 
     public function archive(int $id)
     {
-        return "archive";
+        return $id;
     }
 
     public function delete(int $id)
     {
-        return "delete";
+        return $id;
     }
 }
