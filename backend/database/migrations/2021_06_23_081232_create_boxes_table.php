@@ -16,8 +16,7 @@ class CreateBoxesTable extends Migration
         Schema::create('boxes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('description');
-            $table->integer('forward_id')->unique();
+            $table->integer('forward_id')->nullable()->unique();
             $table->timestamps();
         });
     }
