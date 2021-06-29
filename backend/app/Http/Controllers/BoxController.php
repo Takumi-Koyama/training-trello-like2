@@ -27,6 +27,15 @@ class BoxController extends Controller
         //件数取得
         $count = $boxes->count();
 
+        //何も登録されていない場合
+        if ($count === 0) {
+            $newBox = new Box;
+            $newBox->title = $request->title;
+            $newBox->forward_id = 0;
+            $newBox->save();
+            return $newBox;
+        }
+
         //最初のBoxを取得
         $firstBox = $boxes->firstWhere('forward_id', 0);
 
